@@ -1,0 +1,44 @@
+<mat-card class="example-card" flex-gt-sm="90" flex-gt-md="80">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>YMLD Movie Theater</mat-card-title>
+    <mat-card-subtitle>Current Performances</mat-card-subtitle>
+  </mat-card-header>
+  <!--<img mat-card-image src="../assets/img/YMLD-Logo.png" alt="YMLD Logo">-->
+  <mat-card-content align="left">
+    <div>
+      <mat-table #table [dataSource]="dataSource" matSort>
+        <!-- Production No Column -->
+        <ng-container matColumnDef="productionNo">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Production No</mat-header-cell>
+          <mat-cell *matCellDef="let performance">{{performance.productionNo}}</mat-cell>
+        </ng-container>
+        <!-- Performance Time Column -->
+        <ng-container matColumnDef="performanceTime">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Performance Time</mat-header-cell>
+          <mat-cell *matCellDef="let performance">{{performance.performanceTime}}</mat-cell>
+        </ng-container>
+        <!-- Performance Date Column -->
+        <ng-container matColumnDef="performanceDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Performance Date</mat-header-cell>
+            <mat-cell *matCellDef="let performance">{{performance.performanceDate}}</mat-cell>
+        </ng-container>
+        <!-- Performance Seat Column -->
+        <ng-container matColumnDef="performanceSeats">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Performance Seat</mat-header-cell>
+          <mat-cell *matCellDef="let performance">{{performance.performanceSeats}}</mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+      </mat-table>
+      <mat-paginator #paginator
+                     [pageSize]="10"
+                     [pageSizeOptions]="[5, 10, 20]">
+      </mat-paginator>
+    </div>
+  </mat-card-content>
+ <!-- <mat-card-actions>
+    <button mat-button>Create</button>
+    <button mat-button>Delete</button>
+  </mat-card-actions>-->
+</mat-card>

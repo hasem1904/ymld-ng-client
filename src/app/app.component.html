@@ -1,20 +1,114 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-sidenav-container class="all-wrap" fullscreen>
+  <mat-sidenav mode="side" opened="true" #sidenav class="mat-elevation-z6">
+    <mat-toolbar color="primary">
+     <a routerLink="/"> <div mat-card-avatar class="example-header-image">
+      </div></a>
+    </mat-toolbar>
+    <mat-toolbar color="primary">
+      <span flex></span>
+      <div layout="column" class="mat-toolbar-tools-bottom inset">
+        <span></span>
+        <!--<user-avatar></user-avatar>-->
+        <div>Håvard Semundseth</div>
+        <div>havard.semundseth@ymld.com</div>
+      </div>
+    </mat-toolbar>
 
+    <!-- Sidebar, select element -->
+    <mat-nav-list>
+      <mat-list-item ng-repeat="item in menu">
+        <a routerLink="/performances">
+          <div>
+            <mat-icon mat-list-icon>local_movies</mat-icon>
+            Performances
+          </div>
+        </a>
+      </mat-list-item>
+      <mat-list-item ng-repeat="item in menu">
+        <a routerLink="/seatpricing">
+          <div>
+            <mat-icon mat-list-icon>local_play</mat-icon>
+            Seat Pricing
+          </div>
+        </a>
+      </mat-list-item>
+      <mat-list-item ng-repeat="item in menu">
+        <a routerLink="/seatmap">
+          <div>
+            <mat-icon mat-list-icon>weekend</mat-icon>
+            Seat Map
+          </div>
+        </a>
+      </mat-list-item>
+      <mat-list-item ng-repeat="item in menu">
+        <a routerLink="/introduction">
+          <div>
+            <mat-icon mat-list-icon>info</mat-icon>
+            Introduction
+          </div>
+        </a>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <h4 mat-subheader>Management</h4>
+      <mat-list-item ng-repeat="item in admin">
+        <!--<a routerLink="http://www.vg.no">-->
+        <a routerLink="/purchase">
+          <div>
+            <mat-icon mat-list-icon>local_grocery_store</mat-icon>
+            Purchase Tickets
+          </div>
+        </a>
+      </mat-list-item>
+      <mat-list-item ng-repeat="item in admin">
+        <a routerLink="/log">
+          <div>
+            <mat-icon mat-list-icon>view_list</mat-icon>
+            Transaction Log
+          </div>
+        </a>
+      </mat-list-item>
+      <mat-list-item ng-repeat="item in admin">
+        <a routerLink="/settings">
+          <div>
+            <mat-icon mat-list-icon>settings</mat-icon>
+            Settings
+          </div>
+        </a>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <div class="page-wrap">
+    <header role="banner">
+      <mat-toolbar color="primary" class="mat-elevation-z6">
+        Your Momma Loves Drama
+      </mat-toolbar>
+    </header>
+    <main class="content">
+      <!--<router-outlet></router-outlet>-->
+      <span></span>
+      <div aria-labelledby="tab1" align="center">
+        <!--<mat-card class="example-card" flex-gt-sm="90" flex-gt-md="80">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Your Momma Loves Drama Movie Theater</mat-card-title>
+            <mat-card-subtitle>Introduction</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="../assets/img/YMLD-Logo.png" alt="YMLD Logo">
+          <mat-card-content align="left">
+            <p>
+              The Your Momma Loves Drama application demonstrates how
+              Apache Derby can be integrated into a Scala application.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card>-->
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
+</mat-sidenav-container>
+
+<!--<app-root></app-root>-->

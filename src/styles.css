@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.example-card {
+  margin: 25px;
+  width: 550px;
+
+}
+
+.example-header-image {
+  background-image: url('./assets/img/YMLD-Logo.gif');
+  background-size: cover;
+
+}
